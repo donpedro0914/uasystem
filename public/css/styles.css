@@ -1,0 +1,15 @@
+.clear {
+	clear:both;
+}
+.font-white {
+	color: #fff !important;
+}
+.v-align-mid {
+	vertical-align: middle !important;
+}
+.reg-link {
+	font-weight: bold;
+}
+.reg-link:hover {
+	cursor: pointer;
+}

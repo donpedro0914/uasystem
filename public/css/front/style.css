@@ -1,0 +1,64 @@
+.font-white {
+	color: #fff !important;
+}
+.v-align-mid {
+	vertical-align: middle !important;
+}
+.tab-container, .goals-container, .quality-container {
+	padding: 50px 100px;
+}
+ul li.nav-item a {
+	color: #002366;
+}
+.footer {
+	background: #262626;
+	position: relative;
+}
+.front_nav li {
+	margin: 0 10px;
+}
+.container-fluid {
+	max-width: 80%;
+}
+ul.hiring {
+	margin: 0;
+	padding: 50px 100px;
+}
+ul.hiring li.job {
+	display: flex;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	padding: 0 0 16px 0;
+	list-style: none;
+    border-bottom: 1px dashed #000;
+    margin-bottom: 16px;
+}
+ul.hiring li.job:last-child {
+	border-bottom: none;
+	margin-bottom: 0;;
+}
+.job-body {
+	flex: 1;
+	-ms-flex: 1;
+}
+.info-container span {
+	font-weight: 700;
+	font-size: 20px;
+}
+.info-container {
+	font-size: 19px;
+}
+.info-container {
+	padding: 50px 100px;
+}
+.apply-btn-container {
+	text-align: center;
+}
+.apply-btn-container a {
+	display: block;
+	width: 80%;
+	margin:0 auto;
+}
+.apply-btn-container a button {
+	width: 100%;
+}
