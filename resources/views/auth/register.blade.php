@@ -18,10 +18,19 @@
                                     @csrf
 
                                     <div class="form-group row">
+                                        <label for="alumni" class="col-md-4 col-form-label text-md-right">{{ __('Alumni ID') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="alumni" type="text" class="alumni_check form-control{{ $errors->has('alumni') ? ' is-invalid' : '' }}" name="alumni" value="{{ old('alumni') }}" required autofocus>
+                                            <span class="alumnicheck"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
                                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                            <input id="name" type="text" class="reg-field form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus disabled>
 
                                             @if ($errors->has('name'))
                                                 <span class="invalid-feedback" role="alert">
@@ -35,7 +44,7 @@
                                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
+                                            <input id="username" type="text" class="reg-field form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus disabled>
 
                                             @if ($errors->has('username'))
                                                 <span class="invalid-feedback" role="alert">
@@ -49,7 +58,7 @@
                                         <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                            <input id="email" type="email" class="reg-field form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required disabled>
 
                                             @if ($errors->has('email'))
                                                 <span class="invalid-feedback" role="alert">
@@ -63,7 +72,7 @@
                                         <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required autofocus>
+                                            <input id="phone" type="text" class="reg-field form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required autofocus disabled>
 
                                             @if ($errors->has('phone'))
                                                 <span class="invalid-feedback" role="alert">
@@ -77,7 +86,7 @@
                                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
 
                                         <div class="col-md-6">
-                                            <select class="form-control" name="gender" id="gender">
+                                            <select class="reg-field form-control" name="gender" id="gender" disabled>
                                                 <option>-- Select Gender --</option>
                                                 <option value="m">Male</option>
                                                 <option value="f">Female</option>
@@ -95,7 +104,7 @@
                                         <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="dob" type="text" class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{ old('dob') }}" required autofocus placeholder="MM/DD/YYY">
+                                            <input id="dob" type="text" class="reg-field form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{ old('dob') }}" required autofocus placeholder="MM/DD/YYY" disabled>
 
                                             @if ($errors->has('dob'))
                                                 <span class="invalid-feedback" role="alert">
@@ -109,7 +118,7 @@
                                         <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                            <input id="password" type="password" class="reg-field form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required disabled>
 
                                             @if ($errors->has('password'))
                                                 <span class="invalid-feedback" role="alert">
@@ -123,13 +132,13 @@
                                         <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                            <input id="password-confirm" type="password" class="reg-field form-control" name="password_confirmation" required disabled>
                                         </div>
                                     </div>
 
                                     <div class="form-group row mb-0">
                                         <div class="col-md-6 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
+                                            <button type="submit" class="reg-field btn btn-primary" disabled>
                                                 {{ __('Register') }}
                                             </button>
                                         </div>

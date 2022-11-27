@@ -21,6 +21,42 @@ $(document).ready(function() {
 
     $(".select2").select2();
 
+	$('#alumni').on('keyup change', function() {
+        var alumni = $(this).val();
+        checkalumni(alumni);
+		alumnicheck(alumni);
+    });
+
+	function alumnicheck(alumni) {
+        $.ajax({
+            type: 'POST',
+            url: baseurl + '/checkalumnidup',
+            data: {'alumni':alumni},
+            success: function(data) {
+                if(data) {
+					$('.alumnicheck').html('<i class="mdi mdi-close-circle text-danger" aria-hidden="true" data-toggle="tooltip" data-placement="right"> <small>Alumni ID has been taken</small></i>');
+                } else {
+					$('.alumnicheck').html('<i class="mdi mdi-checkbox-marked-circle text-success" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Username is available"></i>');
+
+                }
+            }
+        });
+	}
+	function checkalumni(alumni) {
+        $.ajax({
+            type: 'POST',
+            url: baseurl + '/checkalumni',
+            data: {'alumni':alumni},
+            success: function(data) {
+                if(data) {
+                    $('.reg-field').removeAttr('disabled');
+                } else {
+                    $('.reg-field').attr('disabled', 'disabled');
+                }
+            }
+        });
+    };
+
 
 	$('.apply-btn').on('click', function(e) {
 

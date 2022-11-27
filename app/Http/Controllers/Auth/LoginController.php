@@ -48,6 +48,7 @@ class LoginController extends Controller
         return [
             $field => $request->get($this->username()),
             'password' => $request->password,
+            'status' => 1
         ];
     }
 
@@ -58,7 +59,9 @@ class LoginController extends Controller
             return redirect('/dashboard');
         } elseif($type == 1) {
             return redirect('/');
-        } else {
+        } elseif($type == 2) {
+            return redirect('/company/dashboard');
+        }else {
             return redirect('/login')->with('error', 'Incorrect username or password');
         }
     }

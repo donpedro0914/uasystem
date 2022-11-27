@@ -20,7 +20,8 @@
                                     <label>Company</label>
 									<select class="form-control" name="company">
 										<option>-- Select Company --</option>
-										@foreach(App\Company::where('status', 1)->get() as $c)
+										<option value="University of the Assumption">University of the Assumption</option>
+										@foreach(App\User::where('role', 2)->get() as $c)
 										<option value="{{ $c->name }}">{{ $c->name }}</option>
 										@endforeach
 									</select>

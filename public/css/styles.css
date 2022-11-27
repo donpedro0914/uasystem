@@ -13,3 +13,17 @@
 .reg-link:hover {
 	cursor: pointer;
 }
+.account-box {
+	max-width: 100%;
+	margin: auto;
+}
+.account-option {
+	position: relative;
+	border-radius: 5px;
+	background: #fff;
+	min-height: 552px;
+}
+.account-option .account-btn {
+	height: 275px;
+	display: block;
+}

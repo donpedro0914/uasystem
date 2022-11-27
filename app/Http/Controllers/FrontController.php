@@ -8,6 +8,7 @@ use DataTables;
 use Illuminate\Http\Request;
 use App\Jobs;
 use App\User;
+use App\Alumni;
 use File;
 
 use Session;
@@ -69,6 +70,29 @@ class FrontController extends Controller
 
         return ($user) ? redirect('/')->with('success', 'Profile Updated') :
                         redirect('/')->with('error', 'There is something wrong');
+    }
+
+    public function thankyou()
+    {
+        return view('thankyou');
+    }
+
+    public function checkalumni(Request $request)
+    {
+        $checkalumni = Alumni::where('number', request('alumni'))->where('status', 0)->first();
+
+        if($checkalumni) {
+            return response()->json($checkalumni);
+        }
+    }
+
+    public function checkalumnidup(Request $request)
+    {
+        $checkalumni = User::where('alumni_id', request('alumni'))->first();
+
+        if($checkalumni) {
+            return response()->json($checkalumni);
+        }
     }
 
     public function downloadcv($file)

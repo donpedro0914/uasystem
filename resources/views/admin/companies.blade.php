@@ -14,14 +14,6 @@
                         <h4 class="page-title">Companies</h4>
                     </div>
                     <div class="row">
-                        <div class="col-12">
-                            <div class="card-box">
-                                <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#addCompany" data-animation="blur" data-overlayspeed="100" data-overlaycolor="#36404a">Add Company</button>
-                                @include('modal.company')
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-xl-12">
                             <div class="card-box">
                             <div class="table-responsive" data-pattern="priority-columns">
@@ -35,7 +27,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach(App\Company::get() as $c)
+                                            @foreach(App\User::where('role', 2)->get() as $c)
                                             <tr class="text-center">
                                                 <td>{{ $c->name }}</td>
                                                 <td>
@@ -47,7 +39,6 @@
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('company.edit', ['id'=>$c->id]) }}" class="btn btn-xs btn-default btn-edit"><i class="mdi mdi-pencil"></i></a>
-                                                    <a data-id="{{ $c->id }}" data-name="{{ $c->name }}" class="btn btn-xs btn-default btn-delete"><i class="text-danger mdi mdi-close-circle"></i></a>
                                                 </td>
                                             </tr>
                                             @endforeach

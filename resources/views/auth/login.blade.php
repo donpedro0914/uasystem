@@ -4,7 +4,21 @@
 <section class="bg-account-pages">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
+                <div class="wrapper-page">
+                    <div class="account-pages">
+                        <div class="account-option">
+                            <div class="col-12">
+                                <a href="{{ route('register') }}" class="account-btn" >Apply for a job?</a>
+                            </div>
+                            <div class="col-12">
+                                <a href="{{ route('company.registration') }}" class="account-btn" >Want to be our partner?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
                 <div class="wrapper-page">
                     <div class="account-pages">
                         <div class="account-box">
@@ -41,14 +55,6 @@
                                         </div>
                                     </div>
                                 </form>
-                                <div class="row mt-3">
-                                    <div class="col-12 text-center">
-                                        <p class="text-muted mb-0">
-                                            Don't you have an account?
-                                            <a class="reg-link text-dark ml-1" href="/register">Sign up</a>
-                                        </p>
-                                    </div>
-                                </div>
                                 <div class="form-group">
                                     <p><a href="/">< back to homepage</a></p>
                                 </div>
