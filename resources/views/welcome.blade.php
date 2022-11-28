@@ -35,11 +35,13 @@
                             </div>
                             <div class="logo-container">
                                 <h1 class="text-center">Our Partners</h1>
-                                @foreach(App\User::where('role', 2)->get() as $l)
-                                <div class="col-md-3">
-                                {{ HTML::image('logo/'.$l->name.'/'.$l->logo, 'partners', array('width'=>'100%')) }}
+                                <div class="row">
+                                    @foreach(App\User::where('role', 2)->get() as $l)
+                                    <div class="col-md-3">
+                                    {{ HTML::image('logo/'.$l->name.'/'.$l->logo, 'partners', array('width'=>'100%')) }}
+                                    </div>
+                                    @endforeach
                                 </div>
-                                @endforeach
                             </div>
                         </div>
                     </div>

@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-12">
-                    {{ HTML::image('img/banner.png', 'UA', array('width'=>'100%')) }}
+                    {{ HTML::image('img/UACareer PARTNERSHIP.png', 'UA', array('width'=>'100%')) }}
                     </div>
                 </div>
                 <div class="row">

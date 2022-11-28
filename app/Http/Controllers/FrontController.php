@@ -98,7 +98,6 @@ class FrontController extends Controller
     public function downloadcv($file)
     {
         $path = public_path() . '/cv/' . $file;
-
         return response()->download($path);
     }
 

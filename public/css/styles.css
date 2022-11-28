@@ -27,3 +27,12 @@
 	height: 275px;
 	display: block;
 }
+.account-btn {
+	font-size: 0;
+}
+.apply-container {
+	background: url('../img/apply.png') center center no-repeat;
+}
+.partner-container {
+	background: url('../img/partners.png') center center no-repeat;
+}

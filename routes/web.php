@@ -33,7 +33,7 @@ Route::post('/alumni/store', 'AlumniController@store')->name('alumni.store');
 /* My Profile */
 Route::get('/myprofile/{id}', 'FrontController@profile')->name('profile');
 Route::post('/myprofile/update/{id}', 'FrontController@profile_update')->name('profile.update');
-Route::post('/downloadcv', 'FrontController@downloadcv')->name('downloadcv');
+Route::get('/downloadcv/{file}', 'FrontController@downloadcv')->name('downloadcv');
 
 /* Jobs */
 Route::get('/jobs', 'HomeController@jobs')->name('jobs');
@@ -49,6 +49,12 @@ Route::get('/partner-registration', 'CompanyController@registration')->name('com
 Route::post('/partner/store', 'CompanyController@store')->name('company.store');
 Route::get('/company/view/{id}', 'CompanyController@view_company')->name('company.edit');
 Route::post('/company/update/{id}', 'CompanyController@update_company')->name('company.update');
+Route::get('/company/dashboard', 'CompanyController@company_index')->name('company.dashboard');
+Route::get('/company/jobs', 'CompanyController@jobs')->name('company.jobs');
+Route::post('/company/jobs/store', 'CompanyController@jobs_store')->name('company.jobs.store');
+Route::get('/company/jobs/edit/{id}', 'CompanyController@jobs_edit')->name('company.jobs.edit');
 
 /* Applicants */
 Route::get('/applicants', 'HomeController@applicants')->name('applicants');
+Route::get('/company/applicants', 'CompanyController@applicants')->name('company.applicants');
+Route::get('/company/applicant/{id}', 'CompanyController@view_applicant')->name('company.applicant.view');
