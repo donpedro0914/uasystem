@@ -37,7 +37,6 @@ $(document).ready(function() {
 					$('.alumnicheck').html('<i class="mdi mdi-close-circle text-danger" aria-hidden="true" data-toggle="tooltip" data-placement="right"> <small>Alumni ID has been taken</small></i>');
                 } else {
 					$('.alumnicheck').html('<i class="mdi mdi-checkbox-marked-circle text-success" aria-hidden="true" data-toggle="tooltip" data-placement="right" data-original-title="Username is available"></i>');
-
                 }
             }
         });

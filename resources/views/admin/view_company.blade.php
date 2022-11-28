@@ -60,7 +60,7 @@
                                                     <input type="file" class="form-control" id="logo" name="logo">
                                                     @if($company->logo)
                                                     <div class="storeLogoPreview_container">
-                                                        {{ HTML::image('logo/'.$company->name.'/'.$company->logo, $company->name, array('class' => '')) }}
+                                                        {{ HTML::image('logo/'.$company->name.'/'.$company->logo, $company->name, array('style' => 'width: 100%;')) }}
                                                     </div>
                                                     @endif
                                                 </div>

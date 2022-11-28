@@ -36,7 +36,7 @@
                             <div class="logo-container">
                                 <h1 class="text-center">Our Partners</h1>
                                 <div class="row">
-                                    @foreach(App\User::where('role', 2)->get() as $l)
+                                    @foreach(App\User::where('role', 2)->where('status', 1)->get() as $l)
                                     <div class="col-md-3">
                                     {{ HTML::image('logo/'.$l->name.'/'.$l->logo, 'partners', array('width'=>'100%')) }}
                                     </div>

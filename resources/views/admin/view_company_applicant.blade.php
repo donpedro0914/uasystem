@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('global.header')
-    @include('global.sidebar')
+    @include('global.sidebar_partner')
     <div id="wrapper">
 	    <div class="content-page">
             <div class="content">
