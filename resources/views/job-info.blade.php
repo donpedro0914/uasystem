@@ -23,9 +23,6 @@
                                     <span class="job_label">Company</span> {{ $job->company }}
                                 </div>
                                 <div class="col-12">
-                                    <span class="job_label">Job Type:</span> {{ $job->job_type }}
-                                </div>
-                                <div class="col-12">
                                     <span class="job_label">Job Description:</span> {{ $job->job_description }}
                                 </div>
                                 <div class="col-12">
