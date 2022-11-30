@@ -135,4 +135,19 @@ class CompanyController extends Controller
         return view('admin.view_company_applicant', compact('user'));
     }
 
+    public function jobs_update($id, Request $request)
+    {
+        $job = Jobs::findOrFail($id);
+        $job->job_title = $request->title;
+        $job->job_description = $request->description;
+        $job->job_responsibilities = $request->responsibilities;
+        $job->job_requiremnts = $request->requiremnts;
+        $job->job_type = '';
+        $job->status = $request->status;
+        $job->save();
+
+        return ($job) ? redirect('/company/jobs')->with('success', 'Job Updated') :
+                        redirect('/company/jobs')->with('error', 'There is something wrong');
+    }
+
 }

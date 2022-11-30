@@ -8,7 +8,7 @@
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
                     <!-- item-->
                     <div class="dropdown-item noti-title">
-                        <h6 class="text-overflow m-0">Welcome Admin!</h6>
+                        <h6 class="text-overflow m-0">Welcome {{ Auth::user()->name }}!</h6>
                     </div>
                     <a href="/logout" class="dropdown-item notify-item">
                         <i class="dripicons-power"></i> <span>Logout</span>

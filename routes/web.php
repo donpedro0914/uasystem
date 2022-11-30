@@ -53,6 +53,7 @@ Route::get('/company/dashboard', 'CompanyController@company_index')->name('compa
 Route::get('/company/jobs', 'CompanyController@jobs')->name('company.jobs');
 Route::post('/company/jobs/store', 'CompanyController@jobs_store')->name('company.jobs.store');
 Route::get('/company/jobs/edit/{id}', 'CompanyController@jobs_edit')->name('company.jobs.edit');
+Route::get('/company/jobs/update/{id}', 'CompanyController@jobs_update')->name('company.jobs.update');
 
 /* Applicants */
 Route::get('/applicants', 'HomeController@applicants')->name('applicants');

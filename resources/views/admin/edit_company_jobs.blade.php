@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="card-box">
-                                <form action="{{ route('jobs.update', ['id'=>$job->id]) }}" method="post">
+                                <form action="{{ route('company.jobs.update', ['id'=>$job->id]) }}" method="post">
                                     @csrf
                                     <div class="form-row">
                                         <div class="col-8">
