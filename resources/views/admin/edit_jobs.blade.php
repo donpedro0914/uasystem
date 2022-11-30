@@ -29,7 +29,7 @@
                                                 </div>
                                                 <div class="form-group col-md-12 col-xs-12">
                                                     <label>Company</label>
-                                                    <input type="text" class='form-control' name='company' value="{{ $job->company" }}/>
+                                                    <input type="text" class='form-control' name='company' value="{{ $job->company }}"/>
                                                 </div>
                                                 <div class="form-group col-md-12 col-xs-12">
                                                     <label>Job Description</label>
