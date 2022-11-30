@@ -30,10 +30,10 @@
                                         <tbody>
                                             @foreach(App\User::where('role', 1)->get() as $user)
                                             <tr class="text-center">
-                                                <td>{{ $user->name }}</td>
-                                                <td>{{ $user->phone }}</td>
-                                                <td>{{ $user->email }}</td>
-                                                <td>{{ $user->gender }}</td>
+                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->name }}</a></td>
+                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->phone }}</a></td>
+                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->email }}</a></td>
+                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->gender }}</a></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
