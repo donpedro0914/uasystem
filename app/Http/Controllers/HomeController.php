@@ -86,6 +86,12 @@ class HomeController extends Controller
         return response()->json($job);
     }
 
+    public function view_applicant($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.view_applicant', compact('user'));
+    }
+
     public function logout()
     {
         Auth::logout();

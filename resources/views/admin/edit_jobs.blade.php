@@ -68,7 +68,11 @@
                                                 <ul>
                                                 @foreach(App\Applications::where('job_id', $job->id)->get() as $user)
                                                     @foreach(App\User::where('id', $user->user_id)->get() as $u)
+                                                        @if(Auth::user()->role != 0)
                                                         <li><a href="{{ route('company.applicant.view', ['id'=>$u->id]) }}">{{ $u->name }}</a></li>
+                                                        @else
+                                                        <li><a href="{{ route('applicant.view', ['id'=>$u->id]) }}">{{ $u->name }}</a></li>
+                                                        @endif
                                                     @endforeach
                                                 @endforeach
                                                 </ul>

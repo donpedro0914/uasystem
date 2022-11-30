@@ -56,5 +56,6 @@ Route::get('/company/jobs/edit/{id}', 'CompanyController@jobs_edit')->name('comp
 
 /* Applicants */
 Route::get('/applicants', 'HomeController@applicants')->name('applicants');
+Route::get('/applicant/{id}', 'HomeController@view_applicant')->name('applicant.view');
 Route::get('/company/applicants', 'CompanyController@applicants')->name('company.applicants');
 Route::get('/company/applicant/{id}', 'CompanyController@view_applicant')->name('company.applicant.view');
