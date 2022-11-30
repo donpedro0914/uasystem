@@ -59,7 +59,7 @@ class CompanyController extends Controller
     {
 
         if($request->hasFile('logo')) {
-            $path = public_path().'/logo/'.$request->name.'/';
+            $path = public_path().'/logo/'.$request->username.'/';
             if(!File::exists($path)) {
                 File::makeDirectory($path, $mode = 0777, true, true);
             }
@@ -99,7 +99,7 @@ class CompanyController extends Controller
         $company = User::findOrFail($id);
 
         if($request->hasFile('logo')) {
-            $path = public_path().'/logo/'.$request->name.'/';
+            $path = public_path().'/logo/'.$request->username.'/';
             if(!File::exists($path)) {
                 File::makeDirectory($path, $mode = 0777, true, true);
             }
