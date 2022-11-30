@@ -30,7 +30,6 @@
                                         <thead>
                                             <tr class="text-center">
                                                 <th>Alumni ID</th>
-                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -38,13 +37,6 @@
                                             @foreach(App\Alumni::get() as $a)
                                             <tr class="text-center">
                                                 <td>{{ $a->number }}</td>
-                                                <td>
-                                                    @if ($a->status == 1)
-                                                            <span class="badge badge-primary">Active</span>
-                                                    @else
-                                                        <span class="badge badge-danger">Inactive</span>
-                                                    @endif
-                                                </td>
                                                 <td>
                                                     <a data-module="alumni" data-id="{{ $a->id }}" data-name="{{ $a->number }}" class="btn btn-xs btn-default btn-delete"><i class="text-danger mdi mdi-close-circle"></i></a>
                                                 </td>
