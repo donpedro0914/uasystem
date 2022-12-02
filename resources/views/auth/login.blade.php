@@ -8,7 +8,7 @@
                 <div class="wrapper-page">
                     <div class="account-pages">
                         <div class="account-option">
-                            <div class="col-12 apply-container">
+                            <div class="col-12 apply-container mb-2">
                                 <a href="{{ route('register') }}" class="account-btn" >Apply for a job?</a>
                             </div>
                             <div class="col-12 partner-container">

@@ -57,7 +57,6 @@ class RegisterController extends Controller
             'username' => 'required|string|unique:users',
             'phone' => 'required|string',
             'dob' => 'required|string',
-            'alumni' => 'required|string',
         ]);
     }
 
@@ -72,7 +71,6 @@ class RegisterController extends Controller
 
         $user = User::create([
             'name' => $data['name'],
-            'alumni_id' => $data['alumni'],
             'username' => $data['username'],
             'email' => $data['email'],
             'gender' => $data['gender'],

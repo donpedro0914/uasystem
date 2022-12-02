@@ -8,6 +8,7 @@ use Session;
 use App\Jobs;
 use App\Applications;
 use App\User;
+use App\Company;
  
  
 class HomeController extends Controller
@@ -15,8 +16,9 @@ class HomeController extends Controller
     public function index()
     {
         $jobCount = Jobs::all()->count();
+        $companyCount = User::where('role', 2)->count();
         $applicants = User::where('role', 1)->count();
-        return view('admin.dashboard', ['jobCount' => $jobCount, 'applicants' => $applicants]);
+        return view('admin.dashboard', ['jobCount' => $jobCount, 'applicants' => $applicants, 'companyCount' => $companyCount]);
     }
 
     public function jobs()
