@@ -16,14 +16,6 @@
                     <div class="row">
                         <div class="col-xl-4">
                             <div class="card-box">
-                                <h4 class="header-title"># of Companies</h4>
-                                <div class="mb-3 mt-4">
-                                    <h2 class="font-weight-light">{{ $companyCount }}</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4">
-                            <div class="card-box">
                                 <h4 class="header-title"># of Jobs</h4>
                                 <div class="mb-3 mt-4">
                                     <h2 class="font-weight-light">{{ $jobCount }}</h2>
