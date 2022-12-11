@@ -13,6 +13,8 @@
 Route::get('/', 'FrontController@index');
 Route::get('/job-hiring', 'FrontController@job_hiring')->name('job-hiring');
 Route::get('jobs/info/{id}', 'FrontController@jobs_info')->name('jobs.info');
+Route::get('terms-of-use', 'FrontController@terms')->name('terms');
+Route::get('privacy-policy', 'FrontController@privacy')->name('privacy');
 
 Route::post('/checkalumni', 'FrontController@checkalumni');
 Route::post('/checkalumnidup', 'FrontController@checkalumnidup');

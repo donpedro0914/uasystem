@@ -127,6 +127,16 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group row">
+                                        <label class="col-md-4">&nbsp;</label>
+                                        <div class="col-md-6">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox-signup">
+                                            <label class="custom-control-label" for="checkbox-signup">
+                                                By signing up, you agree to the <a href="{{ route('terms') }}">Terms of Use</a> and <a href="{{ route('privacy') }}">Privacy Policy</a>, including Cookie Use. Others will be able to find you by email or phone number when provided.
+                                            </label>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group row mb-0">
                                         <div class="col-md-6 offset-md-4">
                                             <button type="submit" class="reg-field btn btn-primary" >

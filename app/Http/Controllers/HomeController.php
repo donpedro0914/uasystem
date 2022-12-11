@@ -1,7 +1,7 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -9,8 +9,8 @@ use App\Jobs;
 use App\Applications;
 use App\User;
 use App\Company;
- 
- 
+
+
 class HomeController extends Controller
 {
     public function index()
@@ -35,7 +35,7 @@ class HomeController extends Controller
     {
         $job = new Jobs;
         $job->job_title = $request->title;
-        $job->company = $request->company;
+        $job->company = NULL;
         $job->job_description = $request->description;
         $job->job_responsibilities = $request->responsibilities;
         $job->job_requiremnts = $request->requiremnts;
@@ -99,5 +99,5 @@ class HomeController extends Controller
         Auth::logout();
         return redirect('/');
     }
-     
+
 }

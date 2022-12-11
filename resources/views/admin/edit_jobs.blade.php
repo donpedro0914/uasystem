@@ -27,10 +27,10 @@
                                                     <label>Job Title</label>
                                                     <input type="text" class='form-control' name='title' value="{{ $job->job_title }}" />
                                                 </div>
-                                                <div class="form-group col-md-12 col-xs-12">
+                                                <!-- <div class="form-group col-md-12 col-xs-12">
                                                     <label>Company</label>
                                                     <input type="text" class='form-control' name='company' value="{{ $job->company }}"/>
-                                                </div>
+                                                </div> -->
                                                 <div class="form-group col-md-12 col-xs-12">
                                                     <label>Job Description</label>
                                                     <textarea class="form-control" name='description'>{{ $job->job_description }}</textarea>

@@ -30,8 +30,6 @@
                                         <thead>
                                             <tr class="text-center">
                                                 <th>Job Title</th>
-                                                <th>Company</th>
-                                                <th>Job Type</th>
                                                 <th># of Applicants</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
@@ -41,8 +39,6 @@
                                             @foreach(App\Jobs::all() as $j)
                                             <tr class="text-center">
                                                 <td>{{ $j->job_title }}</td>
-                                                <td>{{ $j->company }}</td>
-                                                <td>{{ $j->job_type }}</td>
                                                 @forelse(App\Applications::selectRaw('count(job_id) as totalCount')->where('job_id', $j->id)->get() as $total)
                                                 <td>{{ $total->totalCount }}</td>
                                                 @empty
@@ -103,7 +99,7 @@
                 title: error,
                 showConfirmButton: false,
                 timer: 1000
-            })  
+            })
         }
     });
 </script>

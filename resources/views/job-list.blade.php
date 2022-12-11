@@ -13,14 +13,18 @@
                     <div class="col-xl-12">
                         <div class="card-box">
                             <div class="hiring-list mt-4">
-                                <h1 class="text-center">Our Openings</h1>
+                                <div class="text-separator">
+                                    <div>
+                                        <span>Our Openings</span>
+                                    </div>
+                                </div>
                                 <p class="text-center">We have {{ $jobCount }} Open Positions</p>
                                 <ul class="hiring">
                                     @foreach($jobs as $job)
                                     <li class="job">
                                         <div class="job-body">
                                             <a href="{{ route('jobs.info', ['id'=>$job->id]) }}">
-                                                <h5>{{ $job->job_title }}</h5>
+                                                <h3>{{ $job->job_title }}</h3>
                                             </a>
                                             <span><b>{{ $job->company }}</b></span><br>
                                             <span>{{ $job->job_type }}</span>
