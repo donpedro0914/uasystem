@@ -37,9 +37,9 @@
                                                 $option = array(
                                                     'm' => 'Male',
                                                     'f' => 'Female',
-                                                );
+                                                )
                                             @endphp
-                                            {{ Form::select('gender', $option, '$user->gender', ['class' => 'form-control']) }}
+                                            {{ Form::select('gender', $option, $user->gender, ['class' => 'form-control']) }}
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label>Date of birth</label>
