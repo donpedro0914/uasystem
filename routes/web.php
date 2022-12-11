@@ -46,16 +46,16 @@ Route::post('/applyjob', 'HomeController@applyjob')->name('applyjob');
 Route::delete('job/delete/{id}', 'HomeController@delete_job')->name('delete_job');
 
 /* Companies */
-Route::get('/companies', 'CompanyController@index')->name('companies');
-Route::get('/partner-registration', 'CompanyController@registration')->name('company.registration');
-Route::post('/partner/store', 'CompanyController@store')->name('company.store');
-Route::get('/company/view/{id}', 'CompanyController@view_company')->name('company.edit');
-Route::post('/company/update/{id}', 'CompanyController@update_company')->name('company.update');
-Route::get('/company/dashboard', 'CompanyController@company_index')->name('company.dashboard');
-Route::get('/company/jobs', 'CompanyController@jobs')->name('company.jobs');
-Route::post('/company/jobs/store', 'CompanyController@jobs_store')->name('company.jobs.store');
-Route::get('/company/jobs/edit/{id}', 'CompanyController@jobs_edit')->name('company.jobs.edit');
-Route::post('/company/jobs/update/{id}', 'CompanyController@jobs_update')->name('company.jobs.update');
+// Route::get('/companies', 'CompanyController@index')->name('companies');
+// Route::get('/partner-registration', 'CompanyController@registration')->name('company.registration');
+// Route::post('/partner/store', 'CompanyController@store')->name('company.store');
+// Route::get('/company/view/{id}', 'CompanyController@view_company')->name('company.edit');
+// Route::post('/company/update/{id}', 'CompanyController@update_company')->name('company.update');
+// Route::get('/company/dashboard', 'CompanyController@company_index')->name('company.dashboard');
+// Route::get('/company/jobs', 'CompanyController@jobs')->name('company.jobs');
+// Route::post('/company/jobs/store', 'CompanyController@jobs_store')->name('company.jobs.store');
+// Route::get('/company/jobs/edit/{id}', 'CompanyController@jobs_edit')->name('company.jobs.edit');
+// Route::post('/company/jobs/update/{id}', 'CompanyController@jobs_update')->name('company.jobs.update');
 
 /* Applicants */
 Route::get('/applicants', 'HomeController@applicants')->name('applicants');
