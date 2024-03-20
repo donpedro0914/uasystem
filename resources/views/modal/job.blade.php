@@ -16,7 +16,7 @@
                                     <label>Job Title</label>
                                     <input type="text" class="form-control" name="title" placeholder="Enter job title.."/>
                                 </div>
-                                <!-- <div class="form-group col-md-12 col-xs-12">
+                                <div class="form-group col-md-12 col-xs-12">
                                     <label>Company</label>
 									<select class="form-control" name="company">
 										<option>-- Select Company --</option>
@@ -25,7 +25,7 @@
 										<option value="{{ $c->name }}">{{ $c->name }}</option>
 										@endforeach
 									</select>
-                                </div> -->
+                                </div>
                                 <div class="form-group col-md-12 col-xs-12">
                                     <label>Job Description</label>
                                     <textarea class="form-control" name="description"></textarea>

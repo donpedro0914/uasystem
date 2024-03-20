@@ -62,31 +62,3 @@ ul.hiring li.job:last-child {
 .apply-btn-container a button {
 	width: 100%;
 }
-.text-separator {
-    text-align: center;
-    padding-bottom: 40px;
-    border-top: 1px solid #eaeaea;
-    margin-top: 40px;
-    border-bottom: 0;
-    clear: both;
-    height: 1px;
-}
-.text-separator div {
-    padding: 0 35px;
-    line-height: 50px;
-    top: -19px;
-    font-size: 12px;
-    color: #fff;
-    font-weight: 700;
-    background-color: #1abc9c;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -o-border-radius: 2px;
-    border: 1px solid transparent;
-    display: inline-block;
-    position: relative;
-}
-.text-separator div span {
-    font-size: 25px;
-}

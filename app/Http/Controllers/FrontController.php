@@ -55,7 +55,7 @@ class FrontController extends Controller
             $filename = $file->getClientOriginalName();
             $file->move($path, $filename);
             $cvFile = $filename;
-
+            
         } else {
             $cvFile = $user->cv;
         }
@@ -99,16 +99,6 @@ class FrontController extends Controller
     {
         $path = public_path() . '/cv/' . $file;
         return response()->download($path);
-    }
-
-    public function terms()
-    {
-        return view('terms');
-    }
-
-    public function privacy()
-    {
-        return view('privacy');
     }
 
 }

@@ -13,8 +13,6 @@
 Route::get('/', 'FrontController@index');
 Route::get('/job-hiring', 'FrontController@job_hiring')->name('job-hiring');
 Route::get('jobs/info/{id}', 'FrontController@jobs_info')->name('jobs.info');
-Route::get('terms-of-use', 'FrontController@terms')->name('terms');
-Route::get('privacy-policy', 'FrontController@privacy')->name('privacy');
 
 Route::post('/checkalumni', 'FrontController@checkalumni');
 Route::post('/checkalumnidup', 'FrontController@checkalumnidup');
@@ -46,19 +44,23 @@ Route::post('/applyjob', 'HomeController@applyjob')->name('applyjob');
 Route::delete('job/delete/{id}', 'HomeController@delete_job')->name('delete_job');
 
 /* Companies */
-// Route::get('/companies', 'CompanyController@index')->name('companies');
-// Route::get('/partner-registration', 'CompanyController@registration')->name('company.registration');
-// Route::post('/partner/store', 'CompanyController@store')->name('company.store');
-// Route::get('/company/view/{id}', 'CompanyController@view_company')->name('company.edit');
-// Route::post('/company/update/{id}', 'CompanyController@update_company')->name('company.update');
-// Route::get('/company/dashboard', 'CompanyController@company_index')->name('company.dashboard');
-// Route::get('/company/jobs', 'CompanyController@jobs')->name('company.jobs');
-// Route::post('/company/jobs/store', 'CompanyController@jobs_store')->name('company.jobs.store');
-// Route::get('/company/jobs/edit/{id}', 'CompanyController@jobs_edit')->name('company.jobs.edit');
-// Route::post('/company/jobs/update/{id}', 'CompanyController@jobs_update')->name('company.jobs.update');
+Route::get('/companies', 'CompanyController@index')->name('companies');
+Route::get('/partner-registration', 'CompanyController@registration')->name('company.registration');
+Route::post('/partner/store', 'CompanyController@store')->name('company.store');
+Route::get('/company/view/{id}', 'CompanyController@view_company')->name('company.edit');
+Route::post('/company/update/{id}', 'CompanyController@update_company')->name('company.update');
+Route::get('/company/dashboard', 'CompanyController@company_index')->name('company.dashboard');
+Route::get('/company/jobs', 'CompanyController@jobs')->name('company.jobs');
+Route::post('/company/jobs/store', 'CompanyController@jobs_store')->name('company.jobs.store');
+Route::get('/company/jobs/edit/{id}', 'CompanyController@jobs_edit')->name('company.jobs.edit');
+Route::post('/company/jobs/update/{id}', 'CompanyController@jobs_update')->name('company.jobs.update');
 
 /* Applicants */
 Route::get('/applicants', 'HomeController@applicants')->name('applicants');
 Route::get('/applicant/{id}', 'HomeController@view_applicant')->name('applicant.view');
+Route::get('/application/{id}', 'HomeController@view_application')->name('application.view');
 Route::get('/company/applicants', 'CompanyController@applicants')->name('company.applicants');
 Route::get('/company/applicant/{id}', 'CompanyController@view_applicant')->name('company.applicant.view');
+Route::get('/company/view-application/{id}', 'CompanyController@view_application')->name('company.application.view');
+Route::post('/approveapplication', 'CompanyController@approveapplication')->name('approveapplication');
+Route::post('/rejectapplication', 'CompanyController@rejectapplication')->name('rejectapplication');

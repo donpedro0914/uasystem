@@ -20,9 +20,10 @@
 .account-option {
 	position: relative;
 	border-radius: 5px;
+	min-height: 552px;
 }
 .account-option .account-btn {
-	height: 515px;
+	height: 275px;
 	display: block;
 }
 .account-btn {
@@ -30,15 +31,6 @@
 }
 .apply-container {
 	background: url('../img/apply.png') center center no-repeat;
-    transition: all ease 0.5s;
-    -webkit-transition: all ease 0.5s;
-    -moz-transition: all ease 0.5s;
-}
-.apply-container:hover {
-    background: url('../img/blue.png') center center no-repeat;
-    transition: all ease 0.5s;
-    -webkit-transition: all ease 0.5s;
-    -moz-transition: all ease 0.5s;
 }
 .partner-container {
 	background: url('../img/partners.png') center center no-repeat;

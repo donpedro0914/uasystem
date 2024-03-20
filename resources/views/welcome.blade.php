@@ -13,18 +13,14 @@
                     <div class="col-xl-12">
                         <div class="card-box">
                             <div class="hiring-list mt-4 mb-4">
-                                <div class="text-separator">
-                                    <div>
-                                        <span>Our Openings</span>
-                                    </div>
-                                </div>
+                                <h1 class="text-center">Our Openings</h1>
                                 <p class="text-center">We have {{ $jobCount }} Open Positions</p>
                                 <ul class="hiring">
                                     @foreach($jobs as $job)
                                     <li class="job">
                                         <div class="job-body">
                                             <a href="{{ route('jobs.info', ['id'=>$job->id]) }}">
-                                                <h3>{{ $job->job_title }}</h3>
+                                                <h5>{{ $job->job_title }}</h5>
                                             </a>
                                             <span><b>{{ $job->company }}</b></span><br>
                                             <span>{{ $job->job_type }}</span>
@@ -36,6 +32,16 @@
                                     @endforeach
                                 </ul>
                                 <h4 class="text-center"><a href="{{ route('job-hiring') }}">Show more</a></h4>
+                            </div>
+                            <div class="logo-container">
+                                <h1 class="text-center">Our Partners</h1>
+                                <div class="row">
+                                    @foreach(App\User::where('role', 2)->where('status', 1)->get() as $l)
+                                    <div class="col-md-3">
+                                    {{ HTML::image('logo/'.$l->username.'/'.$l->logo, 'partners', array('width'=>'100%')) }}
+                                    </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>

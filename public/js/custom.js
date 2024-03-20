@@ -97,6 +97,87 @@ $(document).ready(function() {
 		});
 	});
 
+	$('.approvebtn').on('click', function(e) {
+
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+
+		e.preventDefault();
+		var job_id = $(this).attr('data-id');
+
+		swal({
+			title: 'Are you sure you want to approve this application?',
+			text: 'You can not undo once submitted',
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes!'
+		}).then((result) => {
+		  if (result.value) {
+		  	$.ajax({
+				type:'POST',
+				url: baseurl + 'approveapplication',
+				data:{'id':job_id},
+				success: function(data) {
+					swal(
+						'Done!',
+						'You have successfully approved this application!',
+						'success'
+					  )
+					setTimeout(function() {
+						location.reload();
+					}, 500)
+				}
+			});
+		  }
+		});
+	});
+
+	
+	$('.rejectbtn').on('click', function(e) {
+
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+
+		e.preventDefault();
+		var job_id = $(this).attr('data-id');
+
+		swal({
+			title: 'Are you sure you want to reject this application?',
+			text: 'You can not undo once submitted',
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes!'
+		}).then((result) => {
+		  if (result.value) {
+		  	$.ajax({
+				type:'POST',
+				url: baseurl + 'rejectapplication',
+				data:{'id':job_id},
+				success: function(data) {
+					swal(
+						'Done!',
+						'You have successfully rejected this application!',
+						'success'
+					  )
+					setTimeout(function() {
+						location.reload();
+					}, 500)
+				}
+			});
+		  }
+		});
+	});
+
 	//Delete Function
 	$('.btn-delete').on('click', function(e) {
 

@@ -64,7 +64,7 @@
                                                 <ul>
                                                 @foreach(App\Applications::where('job_id', $job->id)->get() as $user)
                                                     @foreach(App\User::where('id', $user->user_id)->get() as $u)
-                                                        <li><a href="{{ route('company.applicant.view', ['id'=>$u->id]) }}">{{ $u->name }}</a></li>
+                                                        <li><a href="{{ route('company.application.view', ['id'=>$user->id]) }}">{{ $u->name }}</a></li>
                                                     @endforeach
                                                 @endforeach
                                                 </ul>

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use File;
 use Auth;
+use DB;
 
 class CompanyController extends Controller
 {
@@ -132,6 +133,7 @@ class CompanyController extends Controller
     public function view_applicant($id)
     {
         $user = User::findOrFail($id);
+        dd($user);
         return view('admin.view_company_applicant', compact('user'));
     }
 
@@ -148,6 +150,31 @@ class CompanyController extends Controller
 
         return ($job) ? redirect('/company/jobs')->with('success', 'Job Updated') :
                         redirect('/company/jobs')->with('error', 'There is something wrong');
+    }
+
+    public function view_application(Request $request, $id)
+    {
+        $application = Applications::select('users.*', 'applications.*', 'applications.status as jobstatus')->leftJoin('users', 'users.id', '=', 'applications.user_id')->where('applications.id', $id)->first();
+        // dd($application);
+        return view('admin.view_application', ['application' => $application]);
+    }
+
+    public function approveapplication(Request $request)
+    {
+        $application = Applications::findOrFail($request->id);
+        $application->status = '1';
+        $application->save();
+
+        return response()->json($application);
+    }
+
+    public function rejectapplication(Request $request)
+    {
+        $application = Applications::findOrFail($request->id);
+        $application->status = '0';
+        $application->save();
+
+        return response()->json($application);
     }
 
 }

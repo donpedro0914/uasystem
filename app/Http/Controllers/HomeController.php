@@ -1,7 +1,7 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
-
+ 
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -9,15 +9,10 @@ use App\Jobs;
 use App\Applications;
 use App\User;
 use App\Company;
-
-
+ 
+ 
 class HomeController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $jobCount = Jobs::all()->count();
@@ -40,7 +35,7 @@ class HomeController extends Controller
     {
         $job = new Jobs;
         $job->job_title = $request->title;
-        $job->company = NULL;
+        $job->company = $request->company;
         $job->job_description = $request->description;
         $job->job_responsibilities = $request->responsibilities;
         $job->job_requiremnts = $request->requiremnts;
@@ -105,4 +100,10 @@ class HomeController extends Controller
         return redirect('/');
     }
 
+    public function view_application($id)
+    {
+        $application = Applications::select('users.*', 'applications.*', 'applications.status as jobstatus')->leftJoin('users', 'users.id', '=', 'applications.user_id')->where('applications.id', $id)->first();
+        return view('admin.view_application', ['application' => $application]);
+    }
+     
 }
