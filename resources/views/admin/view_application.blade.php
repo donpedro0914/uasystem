@@ -44,7 +44,7 @@
                                             <input type="text" class="form-control" name="dob" value="@if($application->jobstatus == '0') Rejected @else Approved @endif" readonly>
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <label>CV</label> @if(!empty($application->cv))<a target="_blank" href="{{ route('downloadcv', ['file' => $application->cv]) }}" download>{{ $user->cv }}</a> @endif
+                                            <label>CV</label> @if(!empty($application->cv))<a target="_blank" href="{{ route('downloadcv', ['file' => $application->cv]) }}" download>{{ $application->cv }}</a> @endif
                                         </div>
                                     </div>
                                 </form>
