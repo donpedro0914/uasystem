@@ -64,3 +64,4 @@ Route::get('/company/applicant/{id}', 'CompanyController@view_applicant')->name(
 Route::get('/company/view-application/{id}', 'CompanyController@view_application')->name('company.application.view');
 Route::post('/approveapplication', 'CompanyController@approveapplication')->name('approveapplication');
 Route::post('/rejectapplication', 'CompanyController@rejectapplication')->name('rejectapplication');
+Route::get('/export-application/{id}', 'CompanyController@export')->name('applicant.export');

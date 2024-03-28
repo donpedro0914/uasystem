@@ -8,6 +8,9 @@ use App\Jobs;
 use App\Applications;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ApplicationExport;
 use File;
 use Auth;
 use DB;
@@ -175,6 +178,13 @@ class CompanyController extends Controller
         $application->save();
 
         return response()->json($application);
+    }
+
+    public function export($id)
+    {
+        $filename = Carbon::now()->format('Y-m-d').'-applicant-export.xlsx';
+        $record = Applications::where('job_id', $id)->get();
+        return Excel::download(new ApplicationExport($id), $filename);
     }
 
 }

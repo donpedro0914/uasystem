@@ -63,6 +63,7 @@
                                             </div>
                                         </div>
                                         <div class="col-4 bg-dark">
+                                            <a href="{{ route('applicant.export', ['id'=>$job->id]) }}" class="btn btn-danger text-white">Download CSV</a>
                                             <div class="row">
                                                 <h5 class="col-12 text-white">Applicants</h5>
                                                 <ul>
