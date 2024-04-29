@@ -53,6 +53,29 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card-box">
+                                <h4>History of Applications</h4>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <th>Job Title</th>
+                                        <th>Company</th>
+                                        <th>Status</th>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($jobHistory as $jh)
+                                        <tr>
+                                            <td>{{ $jh->job_title }}</td>
+                                            <td>{{ $jh->company }}</td>
+                                            <td>{{ $jh->status }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -41,7 +41,7 @@
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>Job Status</label>
-                                            <input type="text" class="form-control" name="dob" value="@if($application->jobstatus == '0') Rejected @else Approved @endif" readonly>
+                                            <input type="text" class="form-control" name="dob" value="{{ $application->jobstatus }}" readonly>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>CV</label> @if(!empty($application->cv))<a target="_blank" href="{{ route('downloadcv', ['file' => $application->cv]) }}" download>{{ $application->cv }}</a> @endif
@@ -52,6 +52,9 @@
                                     <div class="btn-group">
                                         <button class="btn btn-primary text-white approvebtn" data-id="{{ $application->id }}">Approve</button>
                                         <button class="btn btn-danger text-white rejectbtn" data-id="{{ $application->id }}">Reject</button>
+                                        <button class="btn initialbtn" data-id="{{ $application->id }}">Initial Interview</button>
+                                        <button class="btn btn-secondary exambtn" data-id="{{ $application->id }}">Exam</button>
+                                        <button class="btn btn-success finalbtn" data-id="{{ $application->id }}">Final Interview</button>
                                     </div>
                                 </div>
                             </div>

@@ -17,7 +17,7 @@ class FrontController extends Controller
 {
     public function index() {
         $jobCount = Jobs::all()->count();
-        $jobs = Jobs::where('status', 1)->limit(5)->get();
+        $jobs = Jobs::where('status', 1)->orderBy('created_at', 'DESC')->limit(5)->get();
         return view('welcome', ['jobCount' => $jobCount], compact('jobs'));
     }
 

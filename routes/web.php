@@ -64,4 +64,7 @@ Route::get('/company/applicant/{id}', 'CompanyController@view_applicant')->name(
 Route::get('/company/view-application/{id}', 'CompanyController@view_application')->name('company.application.view');
 Route::post('/approveapplication', 'CompanyController@approveapplication')->name('approveapplication');
 Route::post('/rejectapplication', 'CompanyController@rejectapplication')->name('rejectapplication');
+Route::post('/initialapplication', 'CompanyController@initialapplication')->name('initialapplication');
+Route::post('/examapplication', 'CompanyController@examapplication')->name('examapplication');
+Route::post('/finalapplication', 'CompanyController@finalapplication')->name('finalapplication');
 Route::get('/export-application/{id}', 'CompanyController@export')->name('applicant.export');

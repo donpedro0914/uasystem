@@ -6,14 +6,15 @@
     "type": "project",
     "require": {
         "php": "^7.1.3",
+        "doctrine/dbal": "^3.8",
         "fideloper/proxy": "^4.0",
         "fx3costa/laravelchartjs": "^2.5",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.4.0",
         "maatwebsite/excel": "^3.1",
-        "yajra/laravel-datatables-oracle": "~8.0",
-        "nesbot/carbon": "^1.26.3"
+        "nesbot/carbon": "^1.26.3",
+        "yajra/laravel-datatables-oracle": "~8.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

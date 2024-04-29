@@ -165,7 +165,7 @@ class CompanyController extends Controller
     public function approveapplication(Request $request)
     {
         $application = Applications::findOrFail($request->id);
-        $application->status = '1';
+        $application->status = 'Approved';
         $application->save();
 
         return response()->json($application);
@@ -174,7 +174,34 @@ class CompanyController extends Controller
     public function rejectapplication(Request $request)
     {
         $application = Applications::findOrFail($request->id);
-        $application->status = '0';
+        $application->status = 'Rejected';
+        $application->save();
+
+        return response()->json($application);
+    }
+
+    public function initialapplication(Request $request)
+    {
+        $application = Applications::findOrFail($request->id);
+        $application->status = 'Initial Interview';
+        $application->save();
+
+        return response()->json($application);
+    }
+
+    public function examapplication(Request $request)
+    {
+        $application = Applications::findOrFail($request->id);
+        $application->status = 'Exam';
+        $application->save();
+
+        return response()->json($application);
+    }
+
+    public function finalapplication(Request $request)
+    {
+        $application = Applications::findOrFail($request->id);
+        $application->status = 'Final Interview';
         $application->save();
 
         return response()->json($application);

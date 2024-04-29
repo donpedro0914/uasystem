@@ -91,7 +91,8 @@ class HomeController extends Controller
     public function view_applicant($id)
     {
         $user = User::findOrFail($id);
-        return view('admin.view_applicant', compact('user'));
+        $jobHistory = Jobs::select('jobs.job_title', 'jobs.company', 'applications.status')->leftJoin('applications', 'jobs.id', '=', 'applications.job_id')->where('applications.user_id', $id)->get();
+        return view('admin.view_applicant', compact('user', 'jobHistory'));
     }
 
     public function logout()
