@@ -25,6 +25,9 @@ Auth::routes();
 /* Dashboard */
 Route::get('/dashboard', 'HomeController@index');
 Route::get('/logout', 'HomeController@logout');
+Route::get('/users', 'HomeController@users')->name('users');
+Route::get('/user/view/{id}', 'HomeController@view_user')->name('user.edit');
+Route::post('user/update/{id}', 'HomeController@update_user')->name('admin.update.user');
 
 /* Alumni */
 Route::get('/alumni', 'AlumniController@index')->name('alumni');

@@ -9,6 +9,7 @@ use App\Jobs;
 use App\Applications;
 use App\User;
 use App\Company;
+use Illuminate\Support\Facades\Hash;
  
  
 class HomeController extends Controller
@@ -105,6 +106,33 @@ class HomeController extends Controller
     {
         $application = Applications::select('users.*', 'applications.*', 'applications.status as jobstatus')->leftJoin('users', 'users.id', '=', 'applications.user_id')->where('applications.id', $id)->first();
         return view('admin.view_application', ['application' => $application]);
+    }
+
+    public function users()
+    {
+        $users = User::where('role', '!=', '0')->get();
+        return view('admin.users', compact('users'));
+    }
+
+    public function view_user($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.view_user', ['user' => $user]);
+    }
+
+    public function update_user(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        if(!empty($request->input('password'))) {
+        $user->password = Hash::make($request->input('password'));
+        }
+        $user->save();
+
+        return ($user) ? redirect('/users')->with('success', 'User Successfuly Updated') :
+                        redirect('/users')->with('error', 'Something went wrong');
     }
      
 }
