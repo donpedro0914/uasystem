@@ -149,7 +149,7 @@ class HomeController extends Controller
         $user->phone = $request->phone;
         $user->dob = '01/01/1990';
         $user->gender = 'm';
-        $user->status = '0';
+        $user->status = '1';
         $user->user_role = $request->user_role;
         $user->username = $request->username;
         $user->password = Hash::make($request->input('password'));
