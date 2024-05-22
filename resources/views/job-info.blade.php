@@ -34,7 +34,10 @@
                             </div>
                             @auth
                             <div class="apply-btn-container">
-                                <a><button data-id="{{ $job->id }}" data-user="{{ Auth::user()->id }}" class="apply-btn btn btn-primary">Apply Now</button></a>
+                                @php
+                                    $company_id = App\User::where('name', $job->company)->first();
+                                @endphp
+                                <a><button data-id="{{ $job->id }}" data-company_id="{{ $company_id->id }}" data-user="{{ Auth::user()->id }}" class="apply-btn btn btn-primary">Apply Now</button></a>
                             </div>
                             @endauth
                         </div>

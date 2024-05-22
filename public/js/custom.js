@@ -67,6 +67,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		var job_id = $(this).attr('data-id');
 		var user_id = $(this).attr('data-user');
+		var company_id = $(this).attr('data-company_id');
 
 		swal({
 			title: 'Are you sure you want to apply?',
@@ -81,7 +82,7 @@ $(document).ready(function() {
 		  	$.ajax({
 				type:'POST',
 				url: baseurl + 'applyjob',
-				data:{'job_id':job_id,'user_id':user_id},
+				data:{'job_id':job_id,'user_id':user_id,'company_id':company_id},
 				success: function(data) {
 					swal(
 						'Done!',

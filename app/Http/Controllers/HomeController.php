@@ -72,13 +72,14 @@ class HomeController extends Controller
     {
         $job_id = $request->input('job_id');
         $user_id = $request->input('user_id');
+        $company_id = $request->input('company_id');
 
         $jobs = Jobs::findOrFail($job_id);
         $user = User::where('name', $jobs->company)->first();
 
         $apply = new Applications;
         $apply->job_id = $job_id;
-        $apply->company_id = $user->id;
+        $apply->company_id = $company_id;
         $apply->user_id = $user_id;
         $apply->save();
 
