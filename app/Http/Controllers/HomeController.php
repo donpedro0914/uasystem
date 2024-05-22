@@ -135,4 +135,27 @@ class HomeController extends Controller
                         redirect('/users')->with('error', 'Something went wrong');
     }
      
+    public function admin_users()
+    {
+        $users = User::where('user_role', '!=', '')->get();
+        return view('admin.admin_users', compact('users'));
+    }
+
+    public function user_register(Request $request)
+    {
+        $user = new User;
+        $user->name = $request->fname;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->dob = '01/01/1990';
+        $user->gender = 'm';
+        $user->status = '0';
+        $user->user_role = $request->user_role;
+        $user->username = $request->username;
+        $user->password = Hash::make($request->input('password'));
+        $user->save();
+
+        return ($user) ? redirect('admin-users')->with('success', 'New Admin Added') :
+                        redirect('admin-users')->with('error', 'There is something wrong');
+    }
 }

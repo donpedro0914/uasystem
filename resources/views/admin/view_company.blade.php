@@ -44,6 +44,7 @@
                                                     @endphp
                                                     {{ Form::select('status', $status, $company->status, ['class' => 'form-control']) }}
                                                 </div>
+                                                @if(Auth::user()->user_role == 'guidance')
                                                 <div class="form-group col-md-12 col-xs-12">
                                                     <div class="clearfix text-right mt-3">
                                                         <button type="submit" id="jobFormBtn" class="btn btn-success">
@@ -51,6 +52,7 @@
                                                         </button>
                                                     </div>
                                                 </div>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="col-4">

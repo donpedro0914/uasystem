@@ -28,6 +28,7 @@ Route::get('/logout', 'HomeController@logout');
 Route::get('/users', 'HomeController@users')->name('users');
 Route::get('/user/view/{id}', 'HomeController@view_user')->name('user.edit');
 Route::post('user/update/{id}', 'HomeController@update_user')->name('admin.update.user');
+Route::post('user/register', 'HomeController@user_register')->name('user.register');
 
 /* Alumni */
 Route::get('/alumni', 'AlumniController@index')->name('alumni');
@@ -71,3 +72,6 @@ Route::post('/initialapplication', 'CompanyController@initialapplication')->name
 Route::post('/examapplication', 'CompanyController@examapplication')->name('examapplication');
 Route::post('/finalapplication', 'CompanyController@finalapplication')->name('finalapplication');
 Route::get('/export-application/{id}', 'CompanyController@export')->name('applicant.export');
+
+/* Admin Users */
+Route::get('admin-users', 'HomeController@admin_users')->name('admin.users');

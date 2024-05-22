@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @include('global.header')
-    @include('global.sidebar_partner')
+    @include('global.sidebar')
     <div id="wrapper">
 	    <div class="content-page">
             <div class="content">
@@ -9,9 +9,17 @@
                     <div class="page-title-box">
                         <ol class="breadcrumb float-right">
                             <li class="breadcrumb-item">Admin</li>
-                            <li class="breadcrumb-item active">Applicants</li>
+                            <li class="breadcrumb-item active">Admin Users</li>
                         </ol>
-                        <h4 class="page-title">Applicants</h4>
+                        <h4 class="page-title">Admin Users</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-box">
+                                <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#addUser" data-animation="blur" data-overlayspeed="100" data-overlaycolor="#36404a">Add User</button>
+                                @include('modal.user')
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-xl-12">
@@ -22,25 +30,23 @@
                                         <thead>
                                             <tr class="text-center">
                                                 <th>Full Name</th>
+                                                <th>Username</th>
                                                 <th>Phone</th>
                                                 <th>Email</th>
-                                                <th>Gender</th>
-                                                <th>Job Applied</th>
+                                                <th>Role</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach(App\User::where('role', 1)->get() as $user)
+                                            @foreach($users as $user)
                                             <tr class="text-center">
-                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->name }}</a></td>
-                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->phone }}</a></td>
-                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->email }}</a></td>
-                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->gender }}</a></td>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user->username }}</td>
+                                                <td>{{ $user->phone }}</td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->user_role }}</td>
                                                 <td>
-                                                    @foreach(App\Applications::where('user_id', $user->id)->get() as $application)
-                                                        @foreach(App\Jobs::where('id', $application->job_id)->get() as $job)
-                                                        <span>{{ $job->job_title }}</span><br />
-                                                        @endforeach
-                                                    @endforeach
+                                                    <a href="{{ route('user.edit', ['id'=>$user->id]) }}" class="btn btn-xs btn-default btn-edit"><i class="mdi mdi-pencil"></i></a>
                                                 </td>
                                             </tr>
                                             @endforeach

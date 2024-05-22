@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateApplicationTableStatus extends Migration
+class UpdateUserTableAddUserRole extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class UpdateApplicationTableStatus extends Migration
      */
     public function up()
     {
-        Schema::table('applications', function (Blueprint $table) {
-            $table->string('status')->change();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('user_role')->nullable()->after('status');
         });
     }
 

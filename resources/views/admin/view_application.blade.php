@@ -48,6 +48,7 @@
                                         </div>
                                     </div>
                                 </form>
+                                @if(Auth::user()->user_role == 'marketing')
                                 <div class="form-row">
                                     <div class="btn-group">
                                         <button class="btn btn-primary text-white approvebtn" data-id="{{ $application->id }}">Approve</button>
@@ -57,6 +58,7 @@
                                         <button class="btn btn-success finalbtn" data-id="{{ $application->id }}">Final Interview</button>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>
