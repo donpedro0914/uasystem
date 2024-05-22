@@ -130,7 +130,8 @@ class CompanyController extends Controller
 
     public function applicants()
     {
-        return view('admin.company_applicants');
+        $applicants = Jobs::select('jobs.*', 'applications.*', 'users.*')->leftJoin('applications', 'jobs.id', '=', 'applications.job_id')->leftJoin('users', 'applications.user_id', '=', 'users.id')->get();
+        return view('admin.company_applicants', compact('applicants'));
     }
 
     public function view_applicant($id)

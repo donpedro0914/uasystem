@@ -29,19 +29,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach(App\User::where('role', 1)->get() as $user)
+                                            @foreach($applicants as $user)
                                             <tr class="text-center">
                                                 <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->name }}</a></td>
                                                 <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->phone }}</a></td>
                                                 <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->email }}</a></td>
                                                 <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->gender }}</a></td>
-                                                <td>
-                                                    @foreach(App\Applications::where('user_id', $user->id)->get() as $application)
-                                                        @foreach(App\Jobs::where('id', $application->job_id)->get() as $job)
-                                                        <span>{{ $job->job_title }}</span><br />
-                                                        @endforeach
-                                                    @endforeach
-                                                </td>
+                                                <td>{{ $user->job_title }}<br /></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
