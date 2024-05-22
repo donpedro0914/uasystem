@@ -60,7 +60,7 @@ class LoginController extends Controller
         } elseif($type == 1) {
             return redirect('/');
         } elseif($type == 2) {
-            return redirect('/company/dashboard');
+            return redirect('/company/jobs');
         }else {
             return redirect('/login')->with('error', 'Incorrect username or password');
         }
