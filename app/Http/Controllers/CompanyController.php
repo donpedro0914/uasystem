@@ -138,7 +138,7 @@ class CompanyController extends Controller
     public function view_applicant($id)
     {
         $user = User::findOrFail($id);
-        dd($user);
+        // dd($user);
         return view('admin.view_company_applicant', compact('user'));
     }
 
