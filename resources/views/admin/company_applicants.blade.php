@@ -29,14 +29,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($applicants as $user)
-                                            <tr class="text-center">
-                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->name }}</a></td>
-                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->phone }}</a></td>
-                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->email }}</a></td>
-                                                <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->gender }}</a></td>
-                                                <td>{{ $user->job_title }}<br /></td>
-                                            </tr>
+                                            @foreach(App\Applications::where('company_id', Auth::user()->id)->get() as $application)
+                                                @foreach(App\User::where('id', $application->user_id)->get() as $user)
+                                                <tr class="text-center">
+                                                    <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->name }}</a></td>
+                                                    <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->phone }}</a></td>
+                                                    <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->email }}</a></td>
+                                                    <td><a href="{{ route('company.applicant.view', ['id'=>$user->id]) }}">{{ $user->gender }}</a></td>
+                                                    <td>
+                                                        @foreach(App\Jobs::where('id', $application->job_id)->get() as $job)
+                                                        <span>{{ $job->job_title }}<br /></span>
+                                                        @endforeach
+                                                    </td>
+                                                </tr>
+                                                @endforeach
                                             @endforeach
                                         </tbody>
                                     </table>
