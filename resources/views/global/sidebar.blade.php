@@ -9,7 +9,9 @@
                 <li><a href="{{ route('companies') }}"><i class="mdi mdi-store"></i> <span>Companies</span></a></li>
                 <li><a href="{{ route('applicants') }}"><i class="mdi mdi-account-group"></i> <span>Applicants</span></a></li>
                 <li><a href="{{ route('users') }}"><i class="mdi mdi-account-group"></i> <span>Users</span></a></li>
+                @if(Auth::user()->user_role != 'guidance')
                 <li><a href="{{ route('admin.users') }}"><i class="mdi mdi-account-group"></i> <span>Admin Users</span></a></li>
+                @endif
             </ul>
         </div>
         <div class="clearfix"></div>
