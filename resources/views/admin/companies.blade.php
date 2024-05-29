@@ -23,7 +23,9 @@
                                             <tr class="text-center">
                                                 <th>Company Name</th>
                                                 <th>Status</th>
+                                                @if(Auth::user()->user_role != 'marketing')
                                                 <th>Action</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -37,9 +39,11 @@
                                                         <span class="badge badge-danger">Inactive</span>
                                                     @endif
                                                 </td>
+                                                @if(Auth::user()->user_role != 'marketing')
                                                 <td>
                                                     <a href="{{ route('company.edit', ['id'=>$c->id]) }}" class="btn btn-xs btn-default btn-edit"><i class="mdi mdi-pencil"></i></a>
                                                 </td>
+                                                @endif
                                             </tr>
                                             @endforeach
                                         </tbody>
