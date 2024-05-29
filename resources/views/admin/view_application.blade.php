@@ -48,17 +48,19 @@
                                         </div>
                                     </div>
                                 </form>
-                                @if(Auth::user()->user_role == 'marketing')
                                 <div class="form-row">
                                     <div class="btn-group">
+                                        @if(Auth::user()->user_role == 'marketing')
                                         <button class="btn btn-primary text-white approvebtn" data-id="{{ $application->id }}">Approve</button>
                                         <button class="btn btn-danger text-white rejectbtn" data-id="{{ $application->id }}">Reject</button>
+                                        @endif
+                                        @if(Auth::user()->role == 2)
                                         <button class="btn initialbtn" data-id="{{ $application->id }}">Initial Interview</button>
                                         <button class="btn btn-secondary exambtn" data-id="{{ $application->id }}">Exam</button>
                                         <button class="btn btn-success finalbtn" data-id="{{ $application->id }}">Final Interview</button>
+                                        @endif
                                     </div>
                                 </div>
-                                @endif
                             </div>
                         </div>
                     </div>
